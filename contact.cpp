@@ -16,3 +16,33 @@ public:
         cout << "Name: " << name << " | Phone: " << phone << " | Email: " << email << endl;
     }
 };
+
+int main() {
+    ContactBook book;
+    int choice;
+    while (true) {
+        cout << "\nContact Book Menu:\n";
+        cout << "1. Add Contact\n2. View Contacts\n3. Search Contact\n4. Delete Contact\n5. Exit\nChoose an option: ";
+        cin >> choice;
+        cin.ignore();
+        switch (choice) {
+            case 1:
+                book.addContact();
+                break;
+            case 2:
+                book.viewContacts();
+                break;
+            case 3:
+                book.searchContact();
+                break;
+            case 4:
+                book.deleteContact();
+                break;
+            case 5:
+                cout << "Exiting Contact Book...\n";
+                return 0;
+            default:
+                cout << "Invalid choice! Please try again.\n";
+        }
+    }
+}
