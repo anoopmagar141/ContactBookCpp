@@ -46,6 +46,23 @@ public:
         }
     }
 
+    void searchContact() const {
+        string name;
+        cout << "Enter name to search: ";
+        cin.ignore();
+        getline(cin, name);
+        bool found = false;
+        for (const auto &contact : contacts) {
+            if (contact.getName() == name) {
+                contact.display();
+                found = true;
+            }
+        }
+        if (!found) {
+            cout << "Contact not found.\n";
+        }
+    }
+
 };
 
 int main() {
