@@ -63,6 +63,21 @@ public:
         }
     }
 
+    void deleteContact() {
+        string name;
+        cout << "Enter name to delete: ";
+        cin.ignore();
+        getline(cin, name);
+        auto it = remove_if(contacts.begin(), contacts.end(), [&](const Contact &c) {
+            return c.getName() == name;
+        });
+        if (it != contacts.end()) {
+            contacts.erase(it, contacts.end());
+            cout << "Contact deleted successfully!\n";
+        } else {
+            cout << "Contact not found.\n";
+        }
+    }
 };
 
 int main() {
