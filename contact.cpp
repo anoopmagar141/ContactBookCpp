@@ -17,6 +17,27 @@ public:
     }
 };
 
+class ContactBook {
+private:
+    vector<Contact> contacts;
+
+public:
+    void addContact() {
+        string name, phone, email;
+        cout << "Enter Name: ";
+        cin.ignore();
+        getline(cin, name);
+        cout << "Enter Phone: ";
+        getline(cin, phone);
+        cout << "Enter Email: ";
+        getline(cin, email);
+        contacts.emplace_back(name, phone, email);
+        cout << "Contact added successfully!\n";
+    }
+
+ 
+};
+
 int main() {
     ContactBook book;
     int choice;
