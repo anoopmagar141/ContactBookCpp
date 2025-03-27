@@ -35,7 +35,17 @@ public:
         cout << "Contact added successfully!\n";
     }
 
- 
+    void viewContacts() const {
+        if (contacts.empty()) {
+            cout << "No contacts found.\n";
+            return;
+        }
+        cout << "\nContact List:\n";
+        for (const auto &contact : contacts) {
+            contact.display();
+        }
+    }
+
 };
 
 int main() {
